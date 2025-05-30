@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Resources from "./pages/Resources";
+import Register from "./pages/paths/Register";
 import Community from "./pages/Community";
 import ProductManagement from "./pages/paths/ProductManagement";
 import UXResearch from "./pages/paths/UXResearch";
@@ -28,6 +29,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="resources" element={<Resources />} />
           <Route path="community" element={<Community />} />
+          <Route path="register" element={<Register />} />
           <Route path="paths">
             <Route path="product-management" element={<ProductManagement />} />
             <Route path="ux-research" element={<UXResearch />} />

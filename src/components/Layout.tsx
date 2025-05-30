@@ -29,7 +29,7 @@ function Layout() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
-  console.log(isScrolled)
+  console.log(isScrolled);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
@@ -37,9 +37,7 @@ function Layout() {
       <nav className="bg-transparent fixed w-full z-50">
         <div
           className={`max-w-7xl sm:px-6 lg:px-8 py-6 bg-transparent mx-auto items-center  px-4  transition-all duration-300 ${
-            isScrolled
-              ? "bg-white backdrop-blur-md shadow-md"
-              : ""
+            isScrolled ? "bg-white backdrop-blur-md shadow-md" : ""
           }`}
         >
           <div className="flex justify-between items-center">
@@ -94,9 +92,11 @@ function Layout() {
               </Link>
             </div>
 
-            <button className="hidden md:flex bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">
-              Join Us
-            </button>
+            <Link to="/register" className="flex items-center">
+              <button className="hidden md:flex bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                Join Us
+              </button>
+            </Link>
 
             {/* Hamburger button */}
             <button className="flex items-center md:hidden" onClick={toggleNav}>
@@ -152,9 +152,11 @@ function Layout() {
                 Community
               </Link>
 
-              <button className=" bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">
-                Join Us
-              </button>
+              <Link to="/register" className="flex justify-center">
+                <button className=" bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors">
+                  Join Us
+                </button>
+              </Link>
             </nav>
           </div>
         )}
