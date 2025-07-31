@@ -11,9 +11,9 @@ function About() {
     },
     {
       name: "Samson Ojo",
-      role: "Head of Mentorship",
-      image: "/images/about-img-2.jpg",
-      bio: "Community builder with experience in tech education.",
+      role: "Lead Mentor",
+      image: "/images/about-img-3.jpg",
+      bio: "Senior product manager at GoCardless and community builder.",
     },
     {
       name: "Damilola Bello",
@@ -134,7 +134,7 @@ function About() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-6"
+                  className="rounded-full mx-auto mb-6 object-fill h-48 w-48"
                 />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {member.name}
