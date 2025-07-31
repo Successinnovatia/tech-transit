@@ -1,4 +1,4 @@
-import { Users2, Target, Heart, Globe2, Trophy } from "lucide-react";
+import { Users2, Target, Heart, Globe2, Trophy, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function About() {
@@ -21,6 +21,30 @@ function About() {
       image:
         "https://img.freepik.com/free-photo/beautiful-african-american-woman-with-crossed-arms_74855-4949.jpg?uid=R193310056&ga=GA1.1.1570111543.1742967309&semt=ais_items_boosted&w=740",
       bio: "Education specialist focused on creating inclusive learning paths and mentorship programs.",
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Ayobami",
+      role: "Student",
+      image: "https://img.freepik.com/free-photo/young-african-american-woman-wearing-casual-clothes-pointing-fingers-camera-with-happy-funny-face-good-energy-vibes_839833-17771.jpg?t=st=1753961139~exp=1753964739~hmac=fa62705ed2a5f69f7c092ea53fac8e76aeafabe1b99bb001bcbef133ce09ffb1&w=1480",
+      testimonial: "Joining the Product Management Mentoring Program at TechTransit was a turning point in my career. The sessions were practical and incredibly supportive. I learned how to approach product strategy with confidence, communicate effectively with stakeholders, and prioritize user needs. What stood out most was the depth of guidance.",
+      rating: 5,
+    },
+    {
+      name: "James Okechukwu",
+      role: "UX Researcher",
+      image: "https://img.freepik.com/free-photo/smiling-african-american-man-looking_74855-5149.jpg?t=st=1753961969~exp=1753965569~hmac=764bbc6569f5a01709b09ce59a42d5361491611d2634a5b84657dda6944cdc73&w=1480",
+      testimonial: "The mentorship program gave me the structure and clarity I needed to transition into UX Research from a non-tech role. Each session built on the last, with real-life case studies and plenty of hands-on feedback. I walked away not only with new skills but with a strong sense of direction and community.",
+      rating: 5,
+    },
+    {
+      name: "Aisha Mustapha",
+      role: "Business Analyst",
+      image: "https://img.freepik.com/free-photo/medium-shot-smiley-woman-work_23-2149304143.jpg?t=st=1753961378~exp=1753964978~hmac=59717b19f5da55cf34665191e6ea7313a485ef465e511710d2d42bd6265f0b3b&w=1480",
+      testimonial: "Before TechTransit, I didn’t even know what a business analyst really did. Through the program’s hands-on training and mentorship, I learned how to gather requirements, map user journeys, and bridge the gap between tech teams and business goals. The experience opened my eyes to a whole new career path and gave me the skills and confidence to pursue it.",
+      rating: 5,
     },
   ];
 
@@ -141,6 +165,57 @@ function About() {
                 </h3>
                 <p className="text-purple-600 mb-4">{member.role}</p>
                 <p className="text-gray-600">{member.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonials Section */}
+      <div className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              What Our Community Says
+            </h2>
+            <p className="text-xl text-gray-600">
+              Hear from our members who have successfully transitioned into tech careers
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8" data-aos="fade-up">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-xl p-8 relative"
+              >
+                {/* Star Rating */}
+                <div className="flex justify-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                
+                {/* Testimonial Text */}
+                <p className="text-gray-700 mb-6 italic text-center">
+                  "{testimonial.testimonial}"
+                </p>
+                
+                {/* Author Info */}
+                <div className="flex items-center justify-center">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="rounded-full h-12 w-12 object-cover mr-4"
+                  />
+                  <div className="text-center">
+                    <h4 className="font-semibold text-gray-900">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-sm text-purple-600">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
